@@ -1,5 +1,6 @@
 import React from 'react'
 import clsx from 'clsx';
+
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -17,6 +18,8 @@ import List from "@material-ui/core/List";
 import Drawer from "@material-ui/core/Drawer";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import {ThemeProvider} from "@material-ui/styles";
+
+import { useTranslation } from 'react-i18next';
 
 import Copyright from '../components/copyright'
 import { mainDrawerItems } from "../components/drawerItems";
@@ -125,10 +128,9 @@ const Home = () => {
     setOpen(false);
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  const { t, i18n } = useTranslation();
   return (
       <ThemeProvider theme={theme}>
-
-
         <div className={classes.root}>
           <CssBaseline />
           <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
@@ -173,7 +175,7 @@ const Home = () => {
             <Container maxWidth="sm">
               <Box my={4}>
                 <Typography variant="h1" component="h1" gutterBottom>
-                  Open Speech Corpus
+                  {t('page_name')}
                 </Typography>
 
 

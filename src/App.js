@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Home from "./pages";
 
 function App() {
   return (
-    <Home />
+
+      <Suspense fallback="loading">
+        <Home />
+      </Suspense>
+
   );
 }
 
